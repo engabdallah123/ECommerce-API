@@ -1,1 +1,10 @@
 .vs/
+*.user
+*.suo
+bin/
+obj/
+*.nupkg
+packages/
+*.log
+*.DS_Store
+*.swp
