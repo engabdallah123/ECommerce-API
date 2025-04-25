@@ -1,0 +1,2284 @@
+{
+	"info": {
+		"_postman_id": "e576129b-03d4-4c74-aba4-6ee860e3cdc6",
+		"name": "E_Commerce | Infinity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43670293",
+		"_collection_link": "https://abdallahebrahim-4906911.postman.co/workspace/Abdallah-Ebrahim's-Workspace~9384c3f3-9678-4144-8585-15aa9d1d19a6/collection/43670293-e576129b-03d4-4c74-aba4-6ee860e3cdc6?action=share&source=collection_link&creator=43670293"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "SignUp",
+							"item": [
+								{
+									"name": "/api/Account/SignUp",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Account/SignUp?FullName=<string>&Email=<string>&Password=<string>&Repassword=<string>&PhoneNumber=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Account",
+												"SignUp"
+											],
+											"query": [
+												{
+													"key": "FullName",
+													"value": "<string>"
+												},
+												{
+													"key": "Email",
+													"value": "<string>"
+												},
+												{
+													"key": "Password",
+													"value": "<string>"
+												},
+												{
+													"key": "Repassword",
+													"value": "<string>"
+												},
+												{
+													"key": "PhoneNumber",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Account/SignUp?FullName=<string>&Email=<string>&Password=<string>&Repassword=<string>&PhoneNumber=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Account",
+														"SignUp"
+													],
+													"query": [
+														{
+															"key": "FullName",
+															"value": "<string>"
+														},
+														{
+															"key": "Email",
+															"value": "<string>"
+														},
+														{
+															"key": "Password",
+															"value": "<string>"
+														},
+														{
+															"key": "Repassword",
+															"value": "<string>"
+														},
+														{
+															"key": "PhoneNumber",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "LogIn",
+							"item": [
+								{
+									"name": "/api/Account/LogIn",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Account/LogIn?email=<string>&password=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Account",
+												"LogIn"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "<string>"
+												},
+												{
+													"key": "password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Account/LogIn?email=<string>&password=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Account",
+														"LogIn"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "<string>"
+														},
+														{
+															"key": "password",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "forgetpassword",
+							"item": [
+								{
+									"name": "/api/Account/forgetpassword",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Account/forgetpassword?email=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Account",
+												"forgetpassword"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Account/forgetpassword?email=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Account",
+														"forgetpassword"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "GetCart",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "/api/Cart/GetCart/:userId",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Cart/GetCart/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cart",
+														"GetCart",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Cart/GetCart/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Cart",
+																"GetCart",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "AddToCart",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "/api/Cart/AddToCart/:userId",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"quantity\": 1,\n  \"productId\": \"<integer>\",\n  \"productName\": \"<string>\",\n  \"price\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Cart/AddToCart/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cart",
+														"AddToCart",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"quantity\": 1,\n  \"productId\": \"<integer>\",\n  \"productName\": \"<string>\",\n  \"price\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/Cart/AddToCart/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Cart",
+																"AddToCart",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "DeletItem",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "{productId}",
+											"item": [
+												{
+													"name": "/api/Cart/DeletItem/:userId/:productId",
+													"request": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Cart/DeletItem/:userId/:productId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Cart",
+																"DeletItem",
+																":userId",
+																":productId"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "productId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/Cart/DeletItem/:userId/:productId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"Cart",
+																		"DeletItem",
+																		":userId",
+																		":productId"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		},
+																		{
+																			"key": "productId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ClearCart",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "/api/Cart/ClearCart/:userId",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Cart/ClearCart/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cart",
+														"ClearCart",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Cart/ClearCart/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Cart",
+																"ClearCart",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Category/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Category/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Category",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "name",
+							"item": [
+								{
+									"name": "{name}",
+									"item": [
+										{
+											"name": "/api/Category/name/:name",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Category/name/:name",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Category",
+														"name",
+														":name"
+													],
+													"variable": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Category/name/:name",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Category",
+																"name",
+																":name"
+															],
+															"variable": [
+																{
+																	"key": "name"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ProductByCategory",
+							"item": [
+								{
+									"name": "/api/Category/ProductByCategory",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Category/ProductByCategory?categoryId=<integer>&page=1&pageSize=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Category",
+												"ProductByCategory"
+											],
+											"query": [
+												{
+													"key": "categoryId",
+													"value": "<integer>"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Category/ProductByCategory?categoryId=<integer>&page=1&pageSize=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Category",
+														"ProductByCategory"
+													],
+													"query": [
+														{
+															"key": "categoryId",
+															"value": "<integer>"
+														},
+														{
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"key": "pageSize",
+															"value": "10"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Category",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Category"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Order/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Order/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Order",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Order/:id",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"registerId\": \"<integer>\",\n  \"registerName\": \"<string>\",\n  \"registerEmail\": \"<string>\",\n  \"registerPhoneNumber\": \"<string>\",\n  \"totalPrice\": \"<double>\",\n  \"paymentMethod\": \"CashOnDelivery\",\n  \"status\": \"Pending\",\n  \"orderDate\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"registerId\": \"<integer>\",\n  \"registerName\": \"<string>\",\n  \"registerEmail\": \"<string>\",\n  \"registerPhoneNumber\": \"<string>\",\n  \"totalPrice\": \"<double>\",\n  \"paymentMethod\": \"CashOnDelivery\",\n  \"status\": \"Pending\",\n  \"orderDate\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Order/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Order",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Order/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Order/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Order",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Order"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Order",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"registerId\": \"<integer>\",\n  \"registerName\": \"<string>\",\n  \"registerEmail\": \"<string>\",\n  \"registerPhoneNumber\": \"<string>\",\n  \"totalPrice\": \"<double>\",\n  \"paymentMethod\": \"CashOnDelivery\",\n  \"status\": \"Pending\",\n  \"orderDate\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Order"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"registerId\": \"<integer>\",\n  \"registerName\": \"<string>\",\n  \"registerEmail\": \"<string>\",\n  \"registerPhoneNumber\": \"<string>\",\n  \"totalPrice\": \"<double>\",\n  \"paymentMethod\": \"CashOnDelivery\",\n  \"status\": \"Pending\",\n  \"orderDate\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Order",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Product/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Product/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Product",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "search",
+							"item": [
+								{
+									"name": "{name}",
+									"item": [
+										{
+											"name": "/api/Product/search/:name",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Product/search/:name",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Product",
+														"search",
+														":name"
+													],
+													"variable": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Product/search/:name",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Product",
+																"search",
+																":name"
+															],
+															"variable": [
+																{
+																	"key": "name"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Product"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Product",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Product"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Register/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Register/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Register",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Register/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Register",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "image",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Register/image/:id",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Register/image/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Register",
+														"image",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Register/image/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Register",
+																"image",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "DeleteAccount",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Register/DeleteAccount/:id",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Register/DeleteAccount/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Register",
+														"DeleteAccount",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Register/DeleteAccount/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Register",
+																"DeleteAccount",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Id",
+											"value": "<integer>"
+										},
+										{
+											"key": "FullName",
+											"value": "<string>"
+										},
+										{
+											"key": "Email",
+											"value": "<string>"
+										},
+										{
+											"key": "Password",
+											"value": "<string>"
+										},
+										{
+											"key": "Repassword",
+											"value": "<string>"
+										},
+										{
+											"key": "PhoneNumber",
+											"value": "<string>"
+										},
+										{
+											"key": "Image",
+											"value": "<binary>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "Id",
+													"value": "<integer>"
+												},
+												{
+													"key": "FullName",
+													"value": "<string>"
+												},
+												{
+													"key": "Email",
+													"value": "<string>"
+												},
+												{
+													"key": "Password",
+													"value": "<string>"
+												},
+												{
+													"key": "Repassword",
+													"value": "<string>"
+												},
+												{
+													"key": "PhoneNumber",
+													"value": "<string>"
+												},
+												{
+													"key": "Image",
+													"value": "<binary>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Review/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Review/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Review",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Review/:id",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"subject\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"productName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"subject\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"productName\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Review/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Review",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Review/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Review/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Review",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Review",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"subject\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"productName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Review",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Review"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"subject\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"productName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Review",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Review"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Transaction",
+					"item": [
+						{
+							"name": "All Transactions",
+							"item": [
+								{
+									"name": "/api/Transaction/All Transactions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Transaction/All Transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Transaction",
+												"All Transactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Transaction/All Transactions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Transaction",
+														"All Transactions"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GetByName",
+							"item": [
+								{
+									"name": "{name}",
+									"item": [
+										{
+											"name": "/api/Transaction/GetByName/:name",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Transaction/GetByName/:name",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Transaction",
+														"GetByName",
+														":name"
+													],
+													"variable": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Transaction/GetByName/:name",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Transaction",
+																"GetByName",
+																":name"
+															],
+															"variable": [
+																{
+																	"key": "name"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Wallet",
+					"item": [
+						{
+							"name": "GetWallet",
+							"item": [
+								{
+									"name": "{username}",
+									"item": [
+										{
+											"name": "/api/Wallet/GetWallet/:username",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Wallet/GetWallet/:username",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Wallet",
+														"GetWallet",
+														":username"
+													],
+													"variable": [
+														{
+															"key": "username",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Wallet/GetWallet/:username",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Wallet",
+																"GetWallet",
+																":username"
+															],
+															"variable": [
+																{
+																	"key": "username"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "AddMony",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Wallet/AddMony/:id",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"userId\": \"<integer>\",\n  \"balance\": \"<double>\",\n  \"userName\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Wallet/AddMony/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Wallet",
+														"AddMony",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<integer>\",\n  \"userId\": \"<integer>\",\n  \"balance\": \"<double>\",\n  \"userName\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/Wallet/AddMony/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Wallet",
+																"AddMony",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "DeleteWallet",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Wallet/DeleteWallet/:id",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Wallet/DeleteWallet/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Wallet",
+														"DeleteWallet",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Wallet/DeleteWallet/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Wallet",
+																"DeleteWallet",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5104"
+		}
+	]
+}
