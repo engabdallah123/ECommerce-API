@@ -1,4 +1,4 @@
-using Data;
+﻿using Data;
 using E_Commerce_API.Service;
 using E_Commerce_API.Service.Cart;
 using Microsoft.AspNetCore.Builder;
@@ -41,8 +41,9 @@ namespace E_Commerce_API
                                .AllowAnyHeader();
                     });
             });
-            builder.Services.AddSingleton<JWToption>();
+           
             var jwtSection = builder.Configuration.GetSection("JWT").Get<JWToption>(); // get the JWToption section from appsettings.json
+            builder.Services.AddSingleton(jwtSection); // عشان تتبعت للكونستركتر بتاع الcontroller
             builder.Services.AddAuthentication(op=>op.DefaultAuthenticateScheme="my scheme")
                 .AddJwtBearer("my scheme", options =>
                 {

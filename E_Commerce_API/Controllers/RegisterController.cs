@@ -22,80 +22,104 @@ namespace E_Commerce_API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRegisterById(int id)
         {
-            var register = await unitWork.RegisterRepo.GetByIdAsync(id);
-            if (register == null)
-                return NotFound();
-            else
+            try
             {
-                RegisterDTO registerDTO = new RegisterDTO()
+                var register = await unitWork.RegisterRepo.GetByIdAsync(id);
+                if (register == null)
+                    return NotFound();
+                else
                 {
-                    Id = register.Id,
-                    FullName = register.FullName,
-                    Email = register.Email,
-                    Password = register.Password,
-                    Repassword = register.Repassword,
-                    PhoneNumber = register.PhoneNumber,
-                   
+                    RegisterDTO registerDTO = new RegisterDTO()
+                    {
+                        Id = register.Id,
+                        FullName = register.FullName,
+                        Email = register.Email,
+                        Password = register.Password,
+                        Repassword = register.Repassword,
+                        PhoneNumber = register.PhoneNumber,
 
-                };
-                return Ok(registerDTO);
+
+                    };
+                    return Ok(registerDTO);
+                }
             }
+            catch (Exception ex)
+            {
+                return StatusCode(500,new {Error=ex.Message});
+            }
+           
                 
         }
         [HttpGet("image/{id}")]
         public IActionResult GetImageById(int id)
         {
-            var imageData = unitWork.db.FolderImages
+            try
+            {
+                var imageData = unitWork.db.FolderImages
                     .Where(x => x.RegisterId == id)
                     .Select(x => x.Data)
                     .FirstOrDefault();
-            if (imageData == null)
-                return NotFound("No image found.");
-            else
-                return File(imageData, "image/*");
+                if (imageData == null)
+                    return NotFound("No image found.");
+                else
+                    return File(imageData, "image/jpeg");
 
-                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = ex.Message });
+
+            }
+
         }
         [HttpPost]
         public IActionResult AddRegister([FromForm] RegisterDTO registerDTO)
         {
-            if (registerDTO == null)
-                return BadRequest("Invalid data.");
-            else
+            try
             {
-
-                var register = new Register()
+                if (registerDTO == null)
+                    return BadRequest("Invalid data.");
+                else
                 {
-                    FullName = registerDTO.FullName,
-                    Email = registerDTO.Email,
-                    Password = registerDTO.Password,
-                    Repassword = registerDTO.Repassword,
-                    PhoneNumber = registerDTO.PhoneNumber
-                    
-                };
-                unitWork.RegisterRepo.Add(register);
-                unitWork.Save();
 
-                if (registerDTO.Image != null)
-                {
-                    using var ms = new MemoryStream();
-                    registerDTO.Image.CopyTo(ms);
-
-                    var folderImage = new FolderImage
+                    var register = new Register()
                     {
-                        RegisterId = register.Id,
-                        Data = ms.ToArray(),
-                    };
-                    unitWork.db.FolderImages.Add(folderImage);
-                    unitWork.Save();
-                    
+                        FullName = registerDTO.FullName,
+                        Email = registerDTO.Email,
+                        Password = registerDTO.Password,
+                        Repassword = registerDTO.Repassword,
+                        PhoneNumber = registerDTO.PhoneNumber
 
+                    };
+                    unitWork.RegisterRepo.Add(register);
+                    unitWork.Save();
+
+                    if (registerDTO.Image != null)
+                    {
+                        using var ms = new MemoryStream();
+                        registerDTO.Image.CopyTo(ms);
+
+                        var folderImage = new FolderImage
+                        {
+                            RegisterId = register.Id,
+                            Data = ms.ToArray(),
+                        };
+                        unitWork.db.FolderImages.Add(folderImage);
+                        unitWork.Save();
+
+
+                    }
+                    return Created(nameof(GetRegisterById), register);
                 }
-                return Created(nameof(GetRegisterById), register);
+            
 
             }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = ex.Message });
+            }
 
-           
+
         }
         [HttpDelete("DeleteAccount/{id}")]
         [Authorize]
