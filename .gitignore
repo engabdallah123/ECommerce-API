@@ -53,3 +53,7 @@ Migrations/
 wwwroot/uploads/*
 !wwwroot/uploads/README.md
 
+/appsettings.json
+/Properties
+
+
