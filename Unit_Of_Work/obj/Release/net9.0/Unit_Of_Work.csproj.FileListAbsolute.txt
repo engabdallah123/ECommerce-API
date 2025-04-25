@@ -17,3 +17,4 @@ C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Unit_Of_Work\obj\Rel
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Unit_Of_Work\obj\Release\net9.0\refint\Unit_Of_Work.dll
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Unit_Of_Work\obj\Release\net9.0\Unit_Of_Work.pdb
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Unit_Of_Work\obj\Release\net9.0\ref\Unit_Of_Work.dll
+C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Unit_Of_Work\obj\Release\net9.0\Unit_Of_Work.sourcelink.json

@@ -13,8 +13,7 @@ namespace Unit_Of_Work
     {
        public AppDbContext db;
         GenericRepositry<Product> productRepo;
-        GenericRepositry<Register> registerRepo;
-        GenericRepositry<Cart> cartRepo;
+        GenericRepositry<Register> registerRepo;       
         GenericRepositry<Category> categoryRepo;
         GenericRepositry<Order> orderRepo;
         GenericRepositry<OrderProduct> orderProductRepo;
@@ -51,17 +50,7 @@ namespace Unit_Of_Work
                 return registerRepo;
             }
         }
-        public GenericRepositry<Cart> CartRepo
-        {
-            get
-            {
-                if (cartRepo == null)
-                {
-                    cartRepo = new GenericRepositry<Cart>(db);
-                }
-                return cartRepo;
-            }
-        }
+      
         public GenericRepositry<Category> CategoryRepo
         {
             get

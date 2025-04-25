@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using E_Commerce_API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models.Domain;
+using Models.DTO.Review;
 using Models.DTO.Wallet;
 using Unit_Of_Work;
 
@@ -9,31 +11,21 @@ namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class WalletController : ControllerBase
     {
-        UnitWork unitWork;
-        public WalletController(UnitWork unitWork)
+        private readonly WalletService walletService;
+        public WalletController(WalletService walletService)
         {
-            this.unitWork = unitWork;
+            this.walletService = walletService;
         }
         [HttpGet("GetWallet/{username}")]
         public IActionResult InskAboutYourBalance(string username)
         {
-            var wallet = unitWork.db.Wallets.FirstOrDefault(w => w.UserName == username);
-            if (wallet == null)
-                return NotFound("Wallet not found");
-            else
-            {
-                WalletDTO walletDTO = new WalletDTO()
-                {
-
-                    UserId = wallet.UserId,
-                    Balance = wallet.Balance,
-                    UserName = wallet.UserName
-                };
-                return Ok(walletDTO);
-            }
+            var result = walletService.GetWalletByUserName(username);
+            if (result == null) 
+                return NotFound();
+            return Ok(result);
 
         }
 
@@ -41,34 +33,28 @@ namespace E_Commerce_API.Controllers
        
         public IActionResult AddMoney(int id,[FromBody] WalletDTO walletDTO)
         {
-            if (ModelState.IsValid)
+            try
             {
-
-                var wallet = unitWork.WalletRepo.GetById(id);
-                if (wallet == null)
-                    return NotFound("Wallet not found");
+                if(ModelState.IsValid)
+                {
+                    walletService.AddMoney(id, walletDTO);
+                    return Ok("Mony is added successfully");
+                }
                 else
                 {
-                    // Update the wallet's balance directly
-                    wallet.Balance += walletDTO.Balance ?? 0; // Use null-coalescing operator to handle null values
-                    unitWork.WalletRepo.Update(wallet, id);
-                    unitWork.Save();
-                    return Ok("Money added successfully");
+                    return BadRequest(ModelState);
                 }
             }
-            return BadRequest("Invalid data");
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
+            }
         }
         [HttpDelete("DeleteWallet/{id}")]
         public IActionResult DeleteYourAccount(int id)
         {
-            var wallet = unitWork.WalletRepo.GetById(id);
-            if (wallet == null)
-                return NotFound("Wallet not found");
-            else
-            {
-                unitWork.WalletRepo.Delete(id);
-                return Ok("Wallet deleted successfully");
-            }
+            walletService.DeletWallet(id);
+            return Ok(new { message = "Your account has been deleted successfully." });
         }
     }
 }

@@ -1,4 +1,6 @@
 using Data;
+using E_Commerce_API.Service;
+using E_Commerce_API.Service.Cart;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -20,9 +22,15 @@ namespace E_Commerce_API
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
-           
+           builder.Services.AddSingleton<ICartService, InMemoryCartService>();
             builder.Services.AddDbContext<AppDbContext>();
             builder.Services.AddScoped<UnitWork>();
+            builder.Services.AddScoped<CategoryService>();
+            builder.Services.AddScoped<OrderService>();
+            builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<ReviewService>();
+            builder.Services.AddScoped<TransactionService>();
+            builder.Services.AddScoped<WalletService>();
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy(AllowAll,
@@ -33,10 +41,12 @@ namespace E_Commerce_API
                                .AllowAnyHeader();
                     });
             });
+            builder.Services.AddSingleton<JWToption>();
+            var jwtSection = builder.Configuration.GetSection("JWT").Get<JWToption>(); // get the JWToption section from appsettings.json
             builder.Services.AddAuthentication(op=>op.DefaultAuthenticateScheme="my scheme")
                 .AddJwtBearer("my scheme", options =>
                 {
-                    string secretKey = "you can't see me ya aaroooo 123456789";
+                    string secretKey = jwtSection.SecretKey;
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                     {
@@ -47,6 +57,7 @@ namespace E_Commerce_API
                         
                     };
                 });
+            
 
             var app = builder.Build();
 
@@ -54,7 +65,7 @@ namespace E_Commerce_API
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
-                // app.UseSwaggerUI(c=> c.SwaggerEndpoint( "/openapi/v1.json", "v1"));
+                app.UseSwaggerUI(c=> c.SwaggerEndpoint(url:"/openapi/v1.json", "v1"));
             }
 
             app.UseHttpsRedirection();

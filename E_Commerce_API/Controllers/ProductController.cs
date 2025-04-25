@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using E_Commerce_API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,101 +11,54 @@ namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   // [Authorize]
     public class ProductController : ControllerBase
     {
-        UnitWork unitWork;
-        public ProductController(UnitWork unitWork)
+        private readonly ProductService productService;
+        public ProductController(ProductService productService)
         {
-            this.unitWork = unitWork;
+            this.productService = productService;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            var products = await unitWork.ProductRepo.GetAllAsync();
+            var products = await productService.GetAllProducts();
             if (products == null || !products.Any())
             {
                 return NotFound("No products found.");
             }
             else
             {
-                List<ProductDTO> productDTO = new List<ProductDTO>();
-                foreach (var product in products)
-                {
-                    ProductDTO productDTO1 = new ProductDTO()
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        Description = product.Description,
-                        Price = product.Price,
-                        stock = product.Stock,
-                        Brand = product.Brand,
-                        Rating = product.Rating,
-                        ImageUrl = await unitWork.db.Images
-                                    .Where(i => i.ProductId == product.Id)
-                                    .Select(i => i.ImageUrl)
-                                    .ToListAsync()
-                    };
-                    productDTO.Add(productDTO1);
-                }
-                return Ok(productDTO);
-
+                return Ok(products);
             }
 
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
         {
-            var product = await unitWork.ProductRepo.GetByIdAsync(id);
+            var product = await productService.GetProductById(id);
             if (product == null)
             {
-                return NotFound($"Product with ID {id} not found.");
+                return NotFound($"No products found with id {id}.");
             }
             else
             {
-                ProductDTO productDTO = new ProductDTO()
-                {
-                    Id = product.Id,
-                    Name = product.Name,
-                    Description = product.Description,
-                    Price = product.Price,
-                    stock = product.Stock,
-                    Brand = product.Brand,
-                    Rating = product.Rating,
-                    ImageUrl = await unitWork.db.Images
-                                .Where(i => i.ProductId == product.Id)
-                                .Select(i => i.ImageUrl)
-                                .ToListAsync()
-                };
-                return Ok(productDTO);
+                return Ok(product);
             }
         }
         [HttpGet("search/{name}")]
-        public async Task<IActionResult> SearchProducts(string name)
+        public async Task<IActionResult> SearchProduct(string name)
         {
-            var product = await unitWork.ProductRepo.GetByNameAsync(name);
+            var product = await productService.GetProductByName(name);
             if (product == null)
             {
                 return NotFound($"No products found with name {name}.");
             }
             else
             {
-                ProductDTO productDTO = new ProductDTO()
-                {
-                    Id = product.Id,
-                    Name = product.Name,
-                    Description = product.Description,
-                    Price = product.Price,
-                    stock = product.Stock,
-                    Brand = product.Brand,
-                    Rating = product.Rating,
-                    ImageUrl = await unitWork.db.Images
-                                  .Where(i => i.ProductId == product.Id)
-                                  .Select(i => i.ImageUrl)
-                                  .ToListAsync()
-                };
-                return Ok(productDTO);
+                return Ok(product);
             }
+
         }
     }
 }

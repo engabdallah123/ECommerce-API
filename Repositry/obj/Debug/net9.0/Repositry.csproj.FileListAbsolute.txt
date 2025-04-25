@@ -15,3 +15,4 @@ C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\obj\Debug\
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\obj\Debug\net9.0\refint\Repositry.dll
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\obj\Debug\net9.0\Repositry.pdb
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\obj\Debug\net9.0\ref\Repositry.dll
+C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\obj\Debug\net9.0\Repositry.sourcelink.json

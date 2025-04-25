@@ -74,62 +74,20 @@
   },
   {
     "ContainingType": "E_Commerce_API.Controllers.CartController",
-    "Method": "GetAll",
-    "RelativePath": "api/Cart",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_API.Controllers.CartController",
-    "Method": "Add",
-    "RelativePath": "api/Cart",
+    "Method": "AddToCart",
+    "RelativePath": "api/Cart/AddToCart/{userId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cartDTO",
-        "Type": "Models.DTO.Cart.CartDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_API.Controllers.CartController",
-    "Method": "GetById",
-    "RelativePath": "api/Cart/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_API.Controllers.CartController",
-    "Method": "Update",
-    "RelativePath": "api/Cart/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "userId",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
-        "Name": "cartDTO",
-        "Type": "Models.DTO.Cart.CartDTO",
+        "Name": "cartItem",
+        "Type": "Models.DTO.Cart.CartItemDTO",
         "IsRequired": true
       }
     ],
@@ -137,15 +95,52 @@
   },
   {
     "ContainingType": "E_Commerce_API.Controllers.CartController",
-    "Method": "Delete",
-    "RelativePath": "api/Cart/{id}",
+    "Method": "ClearCart",
+    "RelativePath": "api/Cart/ClearCart/{userId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controllers.CartController",
+    "Method": "RemoveFromCart",
+    "RelativePath": "api/Cart/DeletItem/{userId}/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "productId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controllers.CartController",
+    "Method": "GetCart",
+    "RelativePath": "api/Cart/GetCart/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -221,7 +216,7 @@
   },
   {
     "ContainingType": "E_Commerce_API.Controllers.OrderController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Order",
     "HttpMethod": "GET",
     "IsController": true,
@@ -247,7 +242,7 @@
   },
   {
     "ContainingType": "E_Commerce_API.Controllers.OrderController",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Order/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -326,7 +321,7 @@
   },
   {
     "ContainingType": "E_Commerce_API.Controllers.ProductController",
-    "Method": "SearchProducts",
+    "Method": "SearchProduct",
     "RelativePath": "api/Product/search/{name}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -506,7 +501,7 @@
   {
     "ContainingType": "E_Commerce_API.Controllers.TransactionController",
     "Method": "GetAllTransactions",
-    "RelativePath": "api/Transaction",
+    "RelativePath": "api/Transaction/All Transactions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -516,7 +511,7 @@
   {
     "ContainingType": "E_Commerce_API.Controllers.TransactionController",
     "Method": "GetTransactionByName",
-    "RelativePath": "api/Transaction/Name/{name}",
+    "RelativePath": "api/Transaction/GetByName/{name}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

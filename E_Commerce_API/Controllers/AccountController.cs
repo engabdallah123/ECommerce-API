@@ -17,10 +17,12 @@ namespace E_Commerce_API.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        private readonly JWToption jwtOption;
         UnitWork unitWork;
-        public AccountController(UnitWork unitWork)
+        public AccountController(UnitWork unitWork, JWToption jwtOption)
         {
             this.unitWork = unitWork;
+            this.jwtOption = jwtOption;
         }
 
         [HttpPost("SignUp")]
@@ -33,7 +35,7 @@ namespace E_Commerce_API.Controllers
                 PhoneNumber == "01062592321")
             {
                 // generate a token
-                string secretKey = "you can't see me ya aaroooo 123456789";
+                string secretKey = jwtOption.SecretKey;
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 var tokenDescription = new SecurityTokenDescriptor

@@ -12,3 +12,4 @@ C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Models\obj\Release\n
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Models\obj\Release\net9.0\Models.pdb
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Models\obj\Release\net9.0\Models.genruntimeconfig.cache
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Models\obj\Release\net9.0\ref\Models.dll
+C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Models\obj\Release\net9.0\Models.sourcelink.json

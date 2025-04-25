@@ -189,3 +189,4 @@ C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\R
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Release\net9.0\E_Commerce_API.pdb
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Release\net9.0\E_Commerce_API.genruntimeconfig.cache
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Release\net9.0\ref\E_Commerce_API.dll
+C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Release\net9.0\E_Commerce_API.sourcelink.json

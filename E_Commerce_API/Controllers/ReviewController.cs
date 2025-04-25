@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using E_Commerce_API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models.Domain;
@@ -12,105 +13,67 @@ namespace E_Commerce_API.Controllers
     [Authorize]
     public class ReviewController : ControllerBase
     {
-        UnitWork unitWork;
-        public ReviewController(UnitWork unitWork)
+         private readonly ReviewService reviewService;
+         public ReviewController(ReviewService reviewService)
         {
-            this.unitWork = unitWork;
+            this.reviewService = reviewService;
         }
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var review = unitWork.ReviewRepo.GetById(id);
+            var review = await reviewService.GetById(id);
             if (review == null)
                 return NotFound();
             else
-            {
-                ReviewDTO reviewDTO = new ReviewDTO()
-                {
-                    Id = review.Id,
-                    Subject = review.Subject,
-                    Comment = review.Comment,
-                    UserName = unitWork.db.Registers
-                                .Where(u => u.Id == review.UserId)
-                                .Select(u => u.FullName)
-                                .FirstOrDefault(),
-                    ProductName = unitWork.db.Products
-                                .Where(p => p.Id == review.ProductId)
-                                .Select(p => p.Name)
-                                .FirstOrDefault()
-                    
-                };
-                return Ok(reviewDTO);
-            }
+                return Ok(review);
+
         }
         [HttpPost]
         public IActionResult Post([FromBody] ReviewDTO reviewDTO)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Review review = new Review()
+                if (ModelState.IsValid)
                 {
-                    Subject = reviewDTO.Subject,
-                    Comment = reviewDTO.Comment,
-                    UserId = unitWork.db.Registers
-                                .Where(u => u.FullName == reviewDTO.UserName)
-                                .Select(u => u.Id)
-                                .FirstOrDefault(),
-                    ProductId = unitWork.db.Products
-                                .Where(p => p.Name == reviewDTO.ProductName)
-                                .Select(p => p.Id)
-                                .FirstOrDefault()
-                };
-                unitWork.ReviewRepo.Add(review);
-                unitWork.Save();
-                return Created("api/review", review);
+                    reviewService.Post(reviewDTO);
+                    return CreatedAtAction(nameof(GetById), new { id = reviewDTO.Id }, reviewDTO);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            return BadRequest(ModelState);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
+            }
         }
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] ReviewDTO reviewDTO)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var review = unitWork.ReviewRepo.GetById(id);
-                if (review == null)
-                    return NotFound();
+                if (ModelState.IsValid)
+                {
+                   
+                    reviewService.Post(reviewDTO);
+                    return NoContent();
+                }
                 else
                 {
-                    Review review1 = new Review()
-                    {
-                        Id = review.Id,
-                        Subject = review.Subject,
-                        Comment = review.Comment,
-                        UserId = unitWork.db.Registers
-                                .Where(u => u.FullName == reviewDTO.UserName)
-                                .Select(u => u.Id)
-                                .FirstOrDefault(),
-                        ProductId = unitWork.db.Products
-                                .Where(p => p.Name == reviewDTO.ProductName)
-                                .Select(p => p.Id)
-                                .FirstOrDefault()
-                    };
-                    
-                    unitWork.ReviewRepo.Update(review, id);
-                    unitWork.Save();
-                    return Ok(review1);
+                    return BadRequest(ModelState);
                 }
             }
-            return BadRequest(ModelState);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
+            }
         }
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var review = unitWork.ReviewRepo.GetById(id);
-            if (review == null)
-                return NotFound();
-            else
-            {
-                unitWork.ReviewRepo.Delete(id);
-                unitWork.Save();
-                return NoContent();
-            }
+            reviewService.Delete(id);
+            return Ok(new { message = "Review deleted successfully." });
         }
     }
 }

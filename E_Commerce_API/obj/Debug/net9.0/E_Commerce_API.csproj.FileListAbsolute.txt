@@ -188,4 +188,5 @@ C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\bin\D
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Debug\net9.0\E_Commerce_API.sourcelink.json
 C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -16,7 +16,7 @@ namespace Models.Domain
         public string? PhoneNumber { get; set; }
 
         // Navigation properties
-        public virtual ICollection<Cart>? Carts { get; set; }
+        
         public virtual ICollection<Order>? Orders { get; set; }
         public virtual ICollection<Review>? Reviews { get; set; }
         public virtual Wallet? Wallet { get; set; } 

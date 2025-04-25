@@ -8,13 +8,13 @@
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public int Stock { get; set; }
-        public double Rating { get; set; }  
+        public decimal Rating { get; set; }  
         public string? Brand { get; set; }
        
 
         // Navigation property 
         public virtual Category? Category { get; set; } 
-        public virtual ICollection<Cart>? Carts { get; set; }
+        
         public virtual ICollection<OrderProduct>? OrderProducts { get; set; }
         public virtual ICollection<Review>? Reviews { get; set; }
         public virtual ICollection<Image>? Images { get; set; } 

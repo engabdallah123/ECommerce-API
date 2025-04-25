@@ -13,7 +13,7 @@ namespace Models.DTO.Category
         public string ?Description { get; set; }
         public decimal Price { get; set; }
         public string? Brand { get; set; }
-        public double Rating { get; set; }
+        public decimal Rating { get; set; }
         public int Stock { get; set; }
         public List<string>? ImageUrl { get; set; }
 

@@ -25,35 +25,6 @@ namespace Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Models.Domain.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Carts");
-                });
-
             modelBuilder.Entity("Models.Domain.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -206,8 +177,8 @@ namespace Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<double>("Rating")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Rating")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -337,25 +308,6 @@ namespace Data.Migrations
                     b.ToTable("WalletTransactions");
                 });
 
-            modelBuilder.Entity("Models.Domain.Cart", b =>
-                {
-                    b.HasOne("Models.Domain.Product", "Product")
-                        .WithMany("Carts")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Models.Domain.Register", "User")
-                        .WithMany("Carts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Models.Domain.FolderImage", b =>
                 {
                     b.HasOne("Models.Domain.Register", "Register")
@@ -470,8 +422,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Models.Domain.Product", b =>
                 {
-                    b.Navigation("Carts");
-
                     b.Navigation("Images");
 
                     b.Navigation("OrderProducts");
@@ -481,8 +431,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Models.Domain.Register", b =>
                 {
-                    b.Navigation("Carts");
-
                     b.Navigation("FolderImages");
 
                     b.Navigation("Orders");

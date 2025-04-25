@@ -27,7 +27,7 @@ namespace Models.DTO.Product
         [Required(ErrorMessage = "Quantity in stock is required.")]
         public int stock { get; set; }
         public string? Brand { get; set; }
-        public double Rating { get; set; }
+        public decimal Rating { get; set; }
        public List<string>? ImageUrl { get; set; } 
         
 
