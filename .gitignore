@@ -54,6 +54,9 @@ wwwroot/uploads/*
 !wwwroot/uploads/README.md
 
 /appsettings.json
-/Properties
+/Properties/
+/Properties/launchSettings.json
+/Properties/publishProfiles
+
 
 
