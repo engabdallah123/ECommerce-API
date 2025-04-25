@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="site23701" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\kapitoo\\OneDrive\\Desktop\\E_Commerce\\E_Commerce_API\\E_Commerce_API\\obj\\Release\\net9\.0\\win-x86\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
