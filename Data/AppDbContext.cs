@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
        
         public DbSet<Register> Registers { get; set; }
@@ -20,27 +20,25 @@ namespace Data
         public DbSet<Review> Reviews { get; set; }       
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletTransaction> WalletTransactions { get; set; }
         public DbSet<FolderImage> FolderImages { get; set; }
+       public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext(DbContextOptions dbContext) : base(dbContext)
         {
-            var builder = new ConfigurationBuilder()
-                 .SetBasePath(AppContext.BaseDirectory)
-                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            IConfigurationRoot configuration = builder.Build();
-            string? connectionString = configuration.GetConnectionString("DefaultConnection");
-            optionsBuilder.UseSqlServer(connectionString).UseLazyLoadingProxies();
+            
+        }
+        public AppDbContext()
+        {
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<OrderProduct>(builder => {
-                builder.HasKey(op => new { op.ProductId, op.OrderId });
-
-            });
+            base.OnModelCreating(modelBuilder);
+           
             modelBuilder.Entity<Wallet>(builder =>
             {
                 builder.HasOne(w => w.Register)

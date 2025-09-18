@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Models.DTO.Image
 {
-   public class ImageDTO
+    public class UploadImageDTO
     {
-        public int? Id { get; set; }
-        public string? ImageUrl { get; set; }
         public int ProductId { get; set; }
 
+        [NotMapped]
+        public List<IFormFile>? Files { get; set; }
     }
 }

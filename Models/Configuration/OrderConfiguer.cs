@@ -9,24 +9,26 @@ namespace Models.Configuration
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.HasKey(o => o.Id);
-            builder.Property(o => o.Id).ValueGeneratedNever();
-            builder.Property(o => o.OrderDate).IsRequired();
-            builder.Property(o => o.RegisterId).IsRequired();
-            builder.Property(o => o.RegisterName).IsRequired().HasMaxLength(100);
-            builder.Property(o => o.RegisterEmail).IsRequired().HasMaxLength(100);
-            builder.Property(o => o.Address).IsRequired().HasMaxLength(200);
-            builder.Property(o => o.PhoneNumber).IsRequired().HasMaxLength(15);
 
-            builder.Property(o => o.Status).IsRequired().HasMaxLength(50);
-            builder.Property(o => o.PaymentMethod).IsRequired().HasMaxLength(50);
+            builder.Property(o => o.OrderStatus)
+                .HasDefaultValue("Pending");
 
-            // Navigation properties Relationships
-            builder.HasOne(o => o.Register)
-                .WithMany(r => r.Orders) 
-                .HasForeignKey(o => o.RegisterId)
-                .OnDelete(DeleteBehavior.NoAction); // Optional: specify delete behavior
+            builder.HasMany(o => o.Items)
+          .WithOne(oi => oi.Order)
+          .HasForeignKey(oi => oi.OrderId)
+          .OnDelete(DeleteBehavior.Cascade);
 
-           
+            builder.HasOne(o => o.User)
+            .WithMany(r => r.Orders)
+             .HasForeignKey(o => o.UserId)
+             .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasOne(o => o.CustomerInfo)
+                .WithMany(c => c.Orders)
+                .HasForeignKey(f => f.CustId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+
         }
     }
 

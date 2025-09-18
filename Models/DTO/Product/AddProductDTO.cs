@@ -1,31 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Models.DTO.Image;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Models.DTO.Product
 {
-   public class ProductDTO
+    public class AddProductDTO
     {
-        public int Id { get; set; }
-       
+        public int? ID { get; set; }
         public string? Name { get; set; }
-
         public string? Description { get; set; }
-
         public decimal? Price { get; set; }
-        
         public int? stock { get; set; }
         public string? Brand { get; set; }
-        public decimal? Rating { get; set; }
-       public List<string>? ImageUrl { get; set; } 
-        public string? CatName { get; set; }
-       public int? CatId { get; set; }
+        public decimal? Rating { get; set; }  
+        public int? CatId { get; set; }
 
-        public List<IFormFile>? Photos { get; set; }
+       
     }
 }

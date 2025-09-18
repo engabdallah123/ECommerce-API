@@ -1,135 +1,208 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Win32;
 using Models.Domain;
-using Models.DTO.Register;
+
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Unit_Of_Work;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Models.DTO;
+using System.Threading.Tasks;
 
 namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    // FIX: Use primary constructor (IDE0290) and disambiguate UserManager
     public class AccountController : ControllerBase
     {
         private readonly JWToption jwtOption;
-        UnitWork unitWork;
-        public AccountController(UnitWork unitWork, JWToption jwtOption)
+        private readonly UserManager<ApplicationUser> userManager;
+        
+        public AccountController( JWToption jwtOption, UserManager<ApplicationUser> userManager)
         {
-            this.unitWork = unitWork;
+     
             this.jwtOption = jwtOption;
+            this.userManager = userManager;
         }
 
+        // Fix ambiguous reference by fully qualifying RegisterDTO and LoginDTO
         [HttpPost("SignUp")]
-        public IActionResult SignUp([FromQuery] string FullName,string Email,string Password,string Repassword,string PhoneNumber)
+        public async Task<IActionResult> SignUp([FromBody] RegisterDTO registerDto)
         {
             try
             {
-                if (FullName == "Abdallah Ebrahim" &&
-               Email == "engabdallah067@gmail.com" &&
-               Password == "1662003aboarab" &&
-               Repassword == "1662003aboarab" &&
-               PhoneNumber == "01062592321")
+                if (ModelState.IsValid)
                 {
-                    // generate a token
-                    string secretKey = jwtOption.SecretKey;
-                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-                    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                    var tokenDescription = new SecurityTokenDescriptor
+                    ApplicationUser user = new ApplicationUser
                     {
-                        Subject = new ClaimsIdentity(new[]
-                        {
-                        new Claim(ClaimTypes.Name, "Abdallah Ebrahim"),
-                        new Claim(ClaimTypes.Email, "engabdallah067@gmail.com"),
-                        new Claim("Hello", "Nawartenaaa")
-                    }),
-                        Expires = DateTime.Now.AddHours(1),
-                        SigningCredentials = creds
-                    };
-                    var token = new JwtSecurityTokenHandler().CreateToken(tokenDescription); // object of token
-                    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);   // token string
-                    return Ok(new {token = tokenString }); // return the token string
+                        UserName = registerDto.FullName,
+                        Email = registerDto.Email,
+                        FullName = registerDto.FullName,
+                        Address = registerDto.Address,
+                        PhoneNumber = registerDto.Phone,
+                        State = registerDto.State
 
+                    };
+                    var result = await userManager.CreateAsync(user, registerDto.Password);
+                    if (result.Succeeded)
+                    {
+                        // generate token 
+                        var secretKey = jwtOption.SecretKey;
+                        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+                        var crids = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                        var roles = await userManager.GetRolesAsync(user);
+                        var claims = new List<Claim>
+                        {
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            new Claim(ClaimTypes.Name, user.FullName),
+                            new Claim(ClaimTypes.Email, user.Email),
+                            new Claim("userID",user.Id),
+                        };
+
+                        // add roles as claims
+                        foreach (var role in roles)
+                        {
+                            claims.Add(new Claim(ClaimTypes.Role, role));
+                        }
+                        var tokenDiscription = new SecurityTokenDescriptor()
+                        {
+                            Subject = new ClaimsIdentity(claims),
+                            SigningCredentials = crids,
+                            Expires = DateTime.UtcNow.AddDays(1)
+
+                        };
+                        var token = new JwtSecurityTokenHandler().CreateToken(tokenDiscription);
+                        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+                        return Ok(new
+                        {
+                            token = tokenString,
+                            Expire = token.ValidTo
+                        });
+                    }
+                    else
+                    {
+                        return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+                    }
                 }
-                else
-                {
-                    return BadRequest("Invalid credentials");
-                }
+
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
                 return StatusCode(400, new { Error = ex.Message });
             }
-
-
         }
+
         [HttpPost("LogIn")]
-        public ActionResult Login(string email, string password)
+        public async Task<ActionResult> Login([FromBody]LoginDTO loginDTO)
         {
             try
             {
-                if (email == "engabdallah067@gmail.com" && password == "1662003aboarab")
+                if (ModelState.IsValid)
                 {
-                    string secretKey = "you can't see me ya aaroooo 123456789";
-                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-                    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                    var tokenDescription = new SecurityTokenDescriptor
+                    var user = await userManager.FindByNameAsync(loginDTO.UserName);
+                    if (user != null)
                     {
-                        Subject = new ClaimsIdentity(new[]
+                        var result = await userManager.CheckPasswordAsync(user, loginDTO.Password);
+                        if (result == true)
                         {
-                        new Claim("Hello","Elmakan makanak"),
-                        new Claim(ClaimTypes.Email,"engabdallah067@gmail.com")
-                    }),
-                        Expires = DateTime.Now.AddHours(1),
-                        SigningCredentials = creds
-                    };
-                    var token = new JwtSecurityTokenHandler().CreateToken(tokenDescription); // object of token
-                    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);   // token string
-                    return Ok(new { token = tokenString });
+                            // generate token
 
+                            var secretKey = jwtOption.SecretKey;
+                            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+                            var crids = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                            var roles = await userManager.GetRolesAsync(user);
+                            var claims = new List<Claim>
+                            {
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            new Claim(ClaimTypes.Name, user.UserName),
+                            new Claim(ClaimTypes.Email, user.Email),
+                            new Claim("userID",user.Id),
+                            };
 
+                            // add roles as claims
+                            foreach (var role in roles)
+                            {
+                                claims.Add(new Claim(ClaimTypes.Role, role));
+                            }
+                            var tokenDiscription = new SecurityTokenDescriptor()
+                            {
+                                Subject = new ClaimsIdentity(claims),
+                                SigningCredentials = crids,
+                                Expires = DateTime.UtcNow.AddDays(1)
+
+                            };
+                            var token = new JwtSecurityTokenHandler().CreateToken(tokenDiscription);
+                            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+                            return Ok(new
+                            {
+                                token = tokenString,
+                                Expire = DateTime.UtcNow.AddDays(1)
+                            });
+
+                        }
+                        return BadRequest("UserName Or Password Wrong");
+                    }
                 }
                 else
                 {
-                    return BadRequest("Invalid credentials");
+                    ModelState.AddModelError("", "UserName Or Password Wrong");
                 }
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, new { Error = ex.Message });
             }
         }
-        [HttpGet("forgetpassword")]
-        public async Task<IActionResult> ForgetPassword(string email)
+        [HttpGet]
+        public async Task<ActionResult<List<CustomerDTO>>> GetAllCustomers()
         {
-            try
-            {
+            var users = await userManager.Users.ToListAsync();
+            var customers = new List<CustomerDTO>();
 
-                var user = await unitWork.db.Registers.FirstOrDefaultAsync(p => p.Email == email);
-                if (user == null)
-                {
-                    return NotFound("User not found");
-                }
-                // send email to user
-                else
-                {
-                    RegisterDTO registerDTO = new RegisterDTO
-                    {
-                        Password = user.Password,
-                    };
-                    return Ok(new { Password = registerDTO.Password });
-
-                }
-            }
-            catch (Exception ex)
+            foreach (var user in users)
             {
-                return StatusCode(500, new { Error = ex.Message });
+                CustomerDTO customer = new CustomerDTO()
+                {
+                    CustomerID = user.Id,
+                    FullName = user.FullName,
+                    Email = user.Email,
+                    Phone = user.PhoneNumber,
+                    State = user.State,
+                    CreatedAt = user.CreatedAt ?? DateTime.MinValue
+                };
+                customers.Add(customer);
             }
+            return Ok(customers);
+
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound("User Not Found"); 
+            }
+
+            var result = await userManager.DeleteAsync(user);
+            if (!result.Succeeded)
+            {
+                return BadRequest(result.Errors); 
+            }
+
+            return NoContent(); 
         }
 
 

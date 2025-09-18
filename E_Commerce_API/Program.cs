@@ -1,9 +1,12 @@
 ﻿using Data;
 using E_Commerce_API.Service;
-using E_Commerce_API.Service.Cart;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Models.Domain;
 using Models.DTO.Wallet;
 using System.Text;
 using Unit_Of_Work;
@@ -14,7 +17,7 @@ namespace E_Commerce_API
     {
         public static void Main(string[] args)
         {
-            string AllowAll = "AllowAll";
+            
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -22,8 +25,12 @@ namespace E_Commerce_API
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
-           builder.Services.AddSingleton<ICartService, InMemoryCartService>();
-            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDbContext<AppDbContext>(op =>
+            {
+                op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseLazyLoadingProxies();
+            });
+              
+          
             builder.Services.AddScoped<UnitWork>();
             builder.Services.AddScoped<CategoryService>();
             builder.Services.AddScoped<OrderService>();
@@ -31,31 +38,52 @@ namespace E_Commerce_API
             builder.Services.AddScoped<ReviewService>();
             builder.Services.AddScoped<TransactionService>();
             builder.Services.AddScoped<WalletService>();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 4;
+
+                // محتاج رقم؟
+                options.Password.RequireDigit = false;
+
+                // محتاج حروف كابيتال؟
+                options.Password.RequireUppercase = false;
+
+                // محتاج حروف سمول؟
+                options.Password.RequireLowercase = false;
+
+                // محتاج رموز خاصة؟
+                options.Password.RequireNonAlphanumeric = false;
+            })
+                .AddEntityFrameworkStores<AppDbContext>();
+
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy(AllowAll,
+                options.AddPolicy("AllowAll",
                     builder =>
                     {
                         builder.AllowAnyOrigin()
-                               .AllowAnyMethod()
-                               .AllowAnyHeader();
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+
                     });
             });
-           
+            builder.Services.AddControllers();
             var jwtSection = builder.Configuration.GetSection("JWT").Get<JWToption>(); // get the JWToption section from appsettings.json
             builder.Services.AddSingleton(jwtSection); // عشان تتبعت للكونستركتر بتاع الcontroller
             builder.Services.AddAuthentication(op=>op.DefaultAuthenticateScheme="my scheme")
                 .AddJwtBearer("my scheme", options =>
                 {
+                    options.SaveToken = true;
                     string secretKey = jwtSection.SecretKey;
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = false,
                         ValidateAudience = false,
-                        ValidateLifetime = false,
+                        ValidateLifetime = true,
                         IssuerSigningKey = key,
-                        
+                       
+
                     };
                 });
             
@@ -69,11 +97,21 @@ namespace E_Commerce_API
                 app.UseSwaggerUI(c=> c.SwaggerEndpoint(url:"/openapi/v1.json", "v1"));
             }
 
+
+            app.UseStaticFiles(); // for wwwroot
+
+            // for make images is available with url
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads")),
+                RequestPath = "/uploads"
+            });
+
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            app.UseCors(AllowAll);
+            app.UseCors("AllowAll");
+            app.UseAuthentication();
+            app.UseAuthorization();          
             app.MapControllers();
 
             app.Run();

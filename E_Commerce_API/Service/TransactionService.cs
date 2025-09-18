@@ -32,23 +32,29 @@ namespace E_Commerce_API.Service
                 return transactionDTOs;
             }
         }
-        public async Task<WalletTransactionDTO> GetTransactionByName(string name)
+        public async Task<List<WalletTransactionDTO>> GetTransactionByName(string name)
         {
-            var transactions = await unitWork.db.WalletTransactions.FirstOrDefaultAsync(t => t.WalletName == name);
+            var transactions = await unitWork.db.WalletTransactions.Where(t => t.WalletName == name).ToListAsync();
             if (transactions == null)
                 throw new Exception($"Transaction with Name {name} not found.");
             else
             {
-                var transactionDTOs = new WalletTransactionDTO()
+                List<WalletTransactionDTO> transactionDTOs = new List<WalletTransactionDTO>();
+                foreach (var transaction in transactions)
                 {
-                    Id = transactions.Id,
-                    WalletId = transactions.WalletId,
-                    Amount = transactions.Amount,
-                    TransactionType = Enum.Parse<TransactionType>(transactions.TransactionType),
-                    TransactionDate = transactions.TransactionDate,
-                    Description = transactions.Description,
-                    WalletName = transactions.WalletName
-                };
+                    WalletTransactionDTO transactionDTO = new WalletTransactionDTO()
+                    {
+                        Id = transaction.Id,
+                        WalletId = transaction.WalletId,
+                        Amount = transaction.Amount,
+                        TransactionType = Enum.Parse<TransactionType>(transaction.TransactionType),
+                        TransactionDate = transaction.TransactionDate,
+                        Description = transaction.Description,
+                        WalletName = transaction.WalletName
+                    };
+                    transactionDTOs.Add(transactionDTO);
+                }
+                
                 return transactionDTOs;
             }
         }

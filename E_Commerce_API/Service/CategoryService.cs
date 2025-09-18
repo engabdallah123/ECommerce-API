@@ -52,7 +52,7 @@ namespace E_Commerce_API.Service
         }
         public async Task<CategoryDTO> GetCategoryByName(string name)
         {
-            var category = await unitWork.CategoryRepo.GetByNameAsync(name);
+            var category = await unitWork.CategoryRepo.GetByName(name);
             if (category == null)
                 return null;
             else
@@ -67,7 +67,7 @@ namespace E_Commerce_API.Service
                 return categoryDTO;
             }
         }
-        public async Task<PaginatedProductsByCategoryDTO> GetProductByCategory(int categoryId, int page = 1, int pagesize = 10)
+        public async Task<PaginatedProductsByCategoryDTO> GetProductByCategory(int categoryId, int page = 1, int pagesize = 100)
         {
             var category = await unitWork.CategoryRepo.GetByIdAsync(categoryId);
             if (category == null)

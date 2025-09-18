@@ -27,7 +27,7 @@ namespace E_Commerce_API.Controllers
                 return NotFound("No transactions found.");
             else
             {
-                return Ok(transactions);
+                return Ok(new { data = transactions });
             }
         }
 
@@ -40,7 +40,7 @@ namespace E_Commerce_API.Controllers
                 return NotFound($"Transaction with Name {name} not found.");
             else
             {
-                return Ok(transaction);
+                return Ok(new { data = transaction });
             }
         }
     }

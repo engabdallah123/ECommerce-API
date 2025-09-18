@@ -25,7 +25,7 @@ namespace E_Commerce_API.Controllers
             var result = walletService.GetWalletByUserName(username);
             if (result == null) 
                 return NotFound();
-            return Ok(result);
+            return Ok(new { data = result });
 
         }
 

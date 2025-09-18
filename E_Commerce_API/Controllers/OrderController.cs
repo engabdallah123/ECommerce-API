@@ -12,7 +12,7 @@ namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class OrderController : ControllerBase
     {
         private readonly OrderService orderService;
@@ -41,14 +41,14 @@ namespace E_Commerce_API.Controllers
                 return Ok(result);
         }
         [HttpPost]
-        public IActionResult Post(OrderDTO orderDTO)
+        public IActionResult CreateOrder(OrderCreatedDTO orderDTO)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    orderService.PostOrder(orderDTO);
-                    return CreatedAtAction(nameof(GetById), new { id = orderDTO.Id }, orderDTO);
+                   var order = orderService.CreateOrder(orderDTO);
+                    return Ok(new {id = order.Id});
                 }
                 else
                 {
@@ -60,19 +60,7 @@ namespace E_Commerce_API.Controllers
                 return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
             }
         }
-        [HttpPut("{id}")]
-        public IActionResult Modify(int id, OrderDTO orderDTO)
-        {
-            if (ModelState.IsValid)
-            {
-                orderService.UpdateOrder(id, orderDTO);
-                    return NoContent();
-            }
-            else
-            {
-                return BadRequest(ModelState);
-            }
-        }
+        
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -87,8 +75,6 @@ namespace E_Commerce_API.Controllers
             }
             else
                 return NotFound();
-
-
             
         }
 

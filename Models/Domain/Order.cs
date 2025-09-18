@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,21 +11,17 @@ namespace Models.Domain
    public class Order
     {
         public int Id { get; set; }
-        public int RegisterId { get; set; }
-       
-       
-        public string? RegisterName { get; set; }
-        public string? RegisterEmail { get; set; }
-        public string? Address { get; set; }
-       public string? PhoneNumber { get; set; }             
-        public decimal TotalPrice { get; set; }
-        public string? PaymentMethod { get; set; }
-        public string? OrderDate { get; set; }
-        public string? Status { get; set; } = "Pending";
-        // Navigation properties
-        [ForeignKey("RegisterId")]
-        public virtual Register? Register { get; set; }
-        public virtual ICollection<OrderProduct>? OrderProducts { get; set; } 
+        public string UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
+
+        public DateTime OrderDate { get; set; }   
+        public string PaymentMethod { get; set; }
+        public string OrderStatus { get; set; } = "Pending";
+        public int CustId { get; set; }
+        public virtual CustomerInfo CustomerInfo { get; set; }
+
+
+        public virtual ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
 
     }
 }

@@ -13,7 +13,7 @@ namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CategoryController : ControllerBase
     {    private readonly CategoryService categoryService;
          public CategoryController(CategoryService categoryService)
@@ -41,7 +41,7 @@ namespace E_Commerce_API.Controllers
                 return NotFound();
             else
             {
-                return Ok(category);
+                return Ok(new { data = category });
             }
         }
         [HttpGet("name/{name}")]
@@ -52,7 +52,7 @@ namespace E_Commerce_API.Controllers
                 return NotFound();
             else
             {
-                return Ok(category);
+                return Ok(new { data = category });
             }
         }
       

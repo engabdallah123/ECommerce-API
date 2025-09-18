@@ -1,5 +1,6 @@
 ﻿using Data;
 using Microsoft.EntityFrameworkCore;
+using Models.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,11 +50,13 @@ namespace Repositry
                 throw new ArgumentNullException($"this {id} not found");
             }
         }
-        public async Task<Entity> GetByNameAsync(string name)
+        public async Task<List<Entity>> GetByNameAsync(string name)
         {
             if (name != null)
             {
-                return await db.Set<Entity>().FirstOrDefaultAsync(e => EF.Property<string>(e, "Name") == name);
+                return await db.Set<Entity>()
+                         .Where(e => EF.Property<string>(e, "Name") == name)
+                          .ToListAsync();
             }
             else
             {
@@ -61,21 +64,36 @@ namespace Repositry
             }
 
         }
-        public Entity GetByName(string name)
+        public async Task<Entity> GetByName(string name)
         {
             if (name != null)
             {
-                return db.Set<Entity>().FirstOrDefault(e => EF.Property<string>(e, "Name") == name);
+                return await  db.Set<Entity>().FirstOrDefaultAsync(e => EF.Property<string>(e, "Name") == name);
+
             }
             else
             {
                 throw new ArgumentNullException($"this {name} not found");
             }
         }
-       
+       public async Task<string> GetCatNameByProId(int proId)
+        {
+            if(proId != 0)
+            {
+                return await db.Products.Where(i => i.Id == proId).Select(c => c.Category.Name).FirstOrDefaultAsync();
+            }
+            else
+            {
+                throw new ArgumentNullException($"this {proId} not found");
+            }
+        }
         public void Add(Entity entity)
         {
             db.Set<Entity>().Add(entity);
+        }
+        public async Task AddAsync(Entity entity)
+        {
+          await db.Set<Entity>().AddAsync(entity);
         }
         public void Update(Entity entity, int id)
         {
@@ -97,6 +115,10 @@ namespace Repositry
         public void Save()
         {
             db.SaveChanges();
+        }
+        public async Task SaveAsync()
+        {
+          await  db.SaveChangesAsync();
         }
         public void Dispose()
         {

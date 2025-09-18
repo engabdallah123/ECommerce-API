@@ -10,7 +10,7 @@ namespace E_Commerce_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   // [Authorize]
     public class ReviewController : ControllerBase
     {
          private readonly ReviewService reviewService;
@@ -25,7 +25,7 @@ namespace E_Commerce_API.Controllers
             if (review == null)
                 return NotFound();
             else
-                return Ok(review);
+                return Ok(new { data = review });
 
         }
         [HttpPost]

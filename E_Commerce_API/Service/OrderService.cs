@@ -1,4 +1,5 @@
-﻿using Models.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Domain;
 using Models.DTO.Order;
 using Models.DTO.Wallet;
 using Unit_Of_Work;
@@ -12,150 +13,124 @@ namespace E_Commerce_API.Service
         {
             this.unitWork = unitWork;
         }
-        public async Task<List<OrderDTO>> GetAllOrder()
+        public async Task<List<OrderReadDTO>> GetAllOrder()
         {
             var orders = await unitWork.OrderRepo.GetAllAsync();
             if (orders == null)
-                return new List<OrderDTO>(); // Return an empty list 
-            else
+                return new List<OrderReadDTO>();
+
+            // جلب كل الـ ProductNames Images مرة واحدة
+            var productIds = orders.SelectMany(o => o.Items.Select(i => i.ProductId)).Distinct().ToList();
+
+            var productsDict = await unitWork.db.Products
+                .Where(p => productIds.Contains(p.Id))
+                .ToDictionaryAsync(p => p.Id, p => new { p.Name });
+
+            var imagesDict = await unitWork.db.Images
+                .Where(im => productIds.Contains(im.ProductId))
+                .GroupBy(im => im.ProductId)
+                .ToDictionaryAsync(g => g.Key, g => g.First().ImageUrl);
+
+            List<OrderReadDTO> orderDTOs = new List<OrderReadDTO>();
+           
+                                
+
+            foreach (var order in orders)
             {
-                List<OrderDTO> orderDTOs = new List<OrderDTO>();
-                foreach (Order order in orders)
+                var items = order.Items.Select(i => new GetOrderItemDTO
                 {
-                    OrderDTO orderDTO = new OrderDTO()
+                    ProductName = productsDict.ContainsKey(i.ProductId) ? productsDict[i.ProductId].Name : "Unknown",
+                    ImageUrl = imagesDict.ContainsKey(i.ProductId) ? imagesDict[i.ProductId] : "",
+                    Quantity = i.Quantity,
+                    ProductId = i.ProductId,
+                    UnitPrice = unitWork.db.Products
+                                .Where(p => p.Id == i.ProductId)
+                                .Select(p => p.Price)
+                                .FirstOrDefault()
+                }).ToList();
+ 
+
+                orderDTOs.Add(new OrderReadDTO
+                {
+                    Id = order.Id,
+                    UserId = order.UserId,
+                    PaymentMethod = order.PaymentMethod,
+                    OrderDate = order.OrderDate,
+                    OrderState = order.OrderStatus,
+                    OrderItems = items,
+                    custInfo = new()
                     {
-                        Id = order.Id,
-                        RegisterId = order.RegisterId,
-                        RegisterName = unitWork.RegisterRepo.GetById(order.RegisterId).FullName, 
-                        RegisterEmail = unitWork.RegisterRepo.GetById(order.RegisterId).Email,
-                        Address = order.Address,
-                        RegisterPhoneNumber = unitWork.RegisterRepo.GetById(order.RegisterId).PhoneNumber,
-                        TotalPrice = order.TotalPrice,
-                        PaymentMethod = order.PaymentMethod,
-                        OrderDate = order.OrderDate.ToString(),
-                        Status = order.Status
-                    };
-                    orderDTOs.Add(orderDTO);
-                }
-                return orderDTOs; 
+                        Name = order.CustomerInfo.CustName,
+                        Email = order.CustomerInfo.Email,
+                        Address = order.CustomerInfo.Address,
+                        Phone = order.CustomerInfo.Phone,
+                    }
+                });
             }
+
+            return orderDTOs;
         }
-        public async Task<OrderDTO> GetOrderById(int id)
+
+        public async Task<OrderCreatedDTO> GetOrderById(int id)
         {
             var order = await unitWork.OrderRepo.GetByIdAsync(id);
             if (order == null)
-                return null; // Return null if not found
-            else
+                return null;
+
+           var items = order.Items.Select(i => new OrderItemCreateDTO
+           {
+               ProductId = i.ProductId,
+               Quantity = i.Quantity,
+               UnitPrice = unitWork.db.Products
+                                .Where(p => p.Id == i.ProductId)
+                                .Select(p => p.Price)
+                                .FirstOrDefault()
+
+           }).ToList();
+
+            return new OrderCreatedDTO
             {
-                OrderDTO orderDTO = new OrderDTO()
+                Id = order.Id,
+                UserId = order.UserId,
+                PaymentMethod = order.PaymentMethod,
+                OrderDate = order.OrderDate,
+                Items = items,
+                custInfo = new()
                 {
-                    Id = order.Id,
-                    RegisterId = order.RegisterId,
-                    RegisterName = unitWork.RegisterRepo.GetById(order.RegisterId).FullName,
-                    RegisterEmail = unitWork.RegisterRepo.GetById(order.RegisterId).Email,
-                    Address = order.Address,
-                    RegisterPhoneNumber = unitWork.RegisterRepo.GetById(order.RegisterId).PhoneNumber,
-                    TotalPrice = order.TotalPrice,
-                    PaymentMethod = order.PaymentMethod,
-                    OrderDate = order.OrderDate.ToString(),
-                    Status = order.Status
-                };
-                return orderDTO;
-            }
+                    Name = order.CustomerInfo.CustName,
+                    Email = order.CustomerInfo.Email,
+                    Address = order.CustomerInfo.Address,
+                    Phone = order.CustomerInfo.Phone
+                }
+            };
         }
-        public void PostOrder(OrderDTO orderDTO)
+
+        public Order CreateOrder(OrderCreatedDTO orderDTO)
         {
-            if (orderDTO.PaymentMethod.Equals("BankTransfer"))
+
+            var order = new Order()
             {
-                var buyerWallet = unitWork.db.Wallets.FirstOrDefault(w => w.UserId == orderDTO.RegisterId);
-                if (buyerWallet == null)
-                    throw new InvalidOperationException("Wallet not found for the user.");
-
-
-                if (buyerWallet.Balance < orderDTO.TotalPrice)
-                    throw new InvalidOperationException("Insufficient balance in the wallet.");
-
-
-                buyerWallet.Balance -= (decimal)orderDTO.TotalPrice;
-                var now = DateTime.Now;
-                buyerWallet.Transactions.Add(new WalletTransaction()
-                {
-                    Amount = (decimal)orderDTO.TotalPrice,
-                    TransactionType = TransactionType.Withdrawal.ToString(),
-                    TransactionDate = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second, 0),
-                    Description = "Order payment",
-                    WalletId = buyerWallet.Id,
-                    WalletName = unitWork.db.Wallets.FirstOrDefault(w => w.UserId == orderDTO.RegisterId).UserName
-                });
-
-                var systemWallet = unitWork.db.Wallets.FirstOrDefault(w => w.UserName == "Infinity");
-                if (systemWallet == null)
-                    throw new InvalidOperationException("System wallet not found.");
                
-                systemWallet.Balance += (decimal)orderDTO.TotalPrice;
-                systemWallet.Transactions.Add(new WalletTransaction()
+                UserId = orderDTO.UserId,
+                PaymentMethod = orderDTO.PaymentMethod,
+                OrderDate = DateTime.UtcNow,
+                Items = orderDTO.Items.Select(i => new OrderItem()
                 {
-                    Amount = (decimal)orderDTO.TotalPrice,
-                    TransactionType = TransactionType.Deposit.ToString(),
-                    TransactionDate = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second, 0),
-                    Description = $"Received payment from user {orderDTO.RegisterName}",
-                    WalletId = systemWallet.Id,
-                    WalletName = unitWork.db.Wallets.Where(w => w.UserName == "Infinity").FirstOrDefault().UserName
-                });
+                    ProductId = i.ProductId,
+                    Quantity = i.Quantity,
+                    UnitPrice = unitWork.db.Products
+                                .Where(p => p.Id == i.ProductId)
+                                .Select(p => p.Price)
+                                .FirstOrDefault()
+                }).ToList(),
+                CustomerInfo = new CustomerInfo(orderDTO.custInfo),
+             
 
-                unitWork.db.Wallets.Update(buyerWallet);
-                unitWork.db.Wallets.Update(systemWallet);
-
-                Order order = new Order()
-                {
-                    RegisterId = orderDTO.RegisterId,
-                    Address = orderDTO.Address,
-                    TotalPrice = (decimal)orderDTO.TotalPrice,
-                    PaymentMethod = orderDTO.PaymentMethod,
-                    OrderDate = orderDTO.OrderDate,
-                    Status = orderDTO.Status,
-                    RegisterName = orderDTO.RegisterName,
-                    RegisterEmail = orderDTO.RegisterEmail,
-                    PhoneNumber = orderDTO.RegisterPhoneNumber,
-                };
-                unitWork.OrderRepo.Add(order);
-                unitWork.Save();
-            }
-            else
-            {
-                Order order = new Order()
-                {
-                    RegisterId = orderDTO.RegisterId,
-                    Address = orderDTO.Address,
-                    TotalPrice = (decimal)orderDTO.TotalPrice,
-                    PaymentMethod = orderDTO.PaymentMethod,
-                    OrderDate = orderDTO.OrderDate,
-                    Status = orderDTO.Status,
-                    RegisterName = orderDTO.RegisterName,
-                    RegisterEmail = orderDTO.RegisterEmail,
-                    PhoneNumber = orderDTO.RegisterPhoneNumber,
-                };
-                unitWork.OrderRepo.Add(order);
-                unitWork.Save();
-            }
-        }
-        public void UpdateOrder(int id, OrderDTO orderDTO)
-        {
-            var order = unitWork.OrderRepo.GetById(id);
-            if (order == null)
-                throw new InvalidOperationException("Order not found.");
-            else
-            {
-                order.RegisterId = orderDTO.RegisterId;
-                order.Address = orderDTO.Address;
-                order.TotalPrice = (decimal)orderDTO.TotalPrice;
-                order.PaymentMethod = orderDTO.PaymentMethod;
-                order.OrderDate = orderDTO.OrderDate;
-                order.Status = orderDTO.Status;
-                unitWork.OrderRepo.Update(order,id);
-                unitWork.Save();
-            }
-        }
+            };
+            unitWork.OrderRepo.Add(order);
+            unitWork.OrderRepo.Save();
+            return order;
+        }   
         public void DeleteOrder(int id)
         {
             var order = unitWork.OrderRepo.GetById(id);

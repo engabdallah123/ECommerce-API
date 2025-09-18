@@ -1,4 +1,5 @@
 ﻿using Data;
+using Microsoft.EntityFrameworkCore.Storage;
 using Models.Domain;
 using Repositry;
 using System;
@@ -16,12 +17,13 @@ namespace Unit_Of_Work
         GenericRepositry<Register> registerRepo;       
         GenericRepositry<Category> categoryRepo;
         GenericRepositry<Order> orderRepo;
-        GenericRepositry<OrderProduct> orderProductRepo;
         GenericRepositry<Image> imageRepo;
+        GenericRepositry<OrderItem> orderItemRepo;
         GenericRepositry<Review> reviewRepo;
         GenericRepositry<Wallet> walletRepo;
         GenericRepositry<WalletTransaction> walletTransactionRepo;
         GenericRepositry<FolderImage> folderImageRepo;
+        GenericRepositry<CustomerFeedback> customerFeedbackRepo;
 
         public UnitWork(AppDbContext db)
         {
@@ -72,18 +74,18 @@ namespace Unit_Of_Work
                 }
                 return orderRepo;
             }
-        }
-        public GenericRepositry<OrderProduct> OrderProductRepo
+        }      
+        public GenericRepositry<OrderItem> OrderItemRepo
         {
             get
             {
-                if (orderProductRepo == null)
+                if (orderItemRepo == null)
                 {
-                    orderProductRepo = new GenericRepositry<OrderProduct>(db);
+                    orderItemRepo = new GenericRepositry<OrderItem>(db);
                 }
-                return orderProductRepo;
+                return orderItemRepo;
             }
-        }
+        }      
         public GenericRepositry<Image> ImageRepo
         {
             get
@@ -139,6 +141,17 @@ namespace Unit_Of_Work
                 return folderImageRepo;
             }
         }
+        public GenericRepositry<CustomerFeedback> CustomerFeedbackRepo
+        {
+            get
+            {
+                if (customerFeedbackRepo == null)
+                {
+                    customerFeedbackRepo = new GenericRepositry<CustomerFeedback>(db);
+                }
+                return customerFeedbackRepo;
+            }
+        }
         public void Save()
         {
             db.SaveChanges();
@@ -147,7 +160,21 @@ namespace Unit_Of_Work
         {
             db.Dispose();
         }
+        // transactions
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        {
+            return await db.Database.BeginTransactionAsync();
+        }
 
+        public async Task CommitTransactionAsync(IDbContextTransaction transaction)
+        {
+            await transaction.CommitAsync();
+        }
+
+        public async Task RollbackTransactionAsync(IDbContextTransaction transaction)
+        {
+            await transaction.RollbackAsync();
+        }
 
     }
 }
