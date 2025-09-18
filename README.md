@@ -89,11 +89,6 @@ www.linkedin.com/in/abdallah-ebrahim-5038272b6
 
 ---
 
-
-#aspnetcore #dotnet #webapi #backenddeveloper #ecommerce #cleanarchitecture #csharp #restapi
-
----
-
 #. Configure API
 - Make sure the Angular app points to the backend API URL in `environment.ts`:
 ```ts
