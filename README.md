@@ -13,7 +13,7 @@ A complete Web API project built with *ASP.NET Core (.NET 9)* following *Clean A
 - SQL Server
 - JWT Authentication & Authorization
 - Memory Cache
-- AutoMapper
+- Redis Cache
 - FluentValidation
 - Swagger / Postman
 
