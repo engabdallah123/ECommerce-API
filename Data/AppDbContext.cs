@@ -26,6 +26,10 @@ namespace Data
         public DbSet<FolderImage> FolderImages { get; set; }
        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
+        public DbSet<Cart> Cart { get; set; }
+        public DbSet<CartItem> CartItem { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
 
         public AppDbContext(DbContextOptions dbContext) : base(dbContext)
         {

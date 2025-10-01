@@ -17,9 +17,12 @@ namespace E_Commerce_API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ProductService productService;
+       
+
         public ProductController(ProductService productService)
         {
             this.productService = productService;
+            
         }
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
@@ -27,10 +30,12 @@ namespace E_Commerce_API.Controllers
             var products = await productService.GetAllProducts();
             if (products == null || !products.Any())
             {
+                
                 return NotFound("No products found.");
             }
             else
             {
+                
                 return Ok(products);
             }
 
@@ -55,7 +60,8 @@ namespace E_Commerce_API.Controllers
             var product = await productService.GetProductById(id);
             if (product == null)
             {
-                return NotFound($"No products found with id {id}.");
+               
+                return NotFound($"No product found with id {id}.");
             }
             else
             {
@@ -68,6 +74,7 @@ namespace E_Commerce_API.Controllers
             var product = await productService.GetProductByName(name);
             if (product == null)
             {
+                
                 return NotFound($"No products found with name {name}.");
             }
             else
@@ -89,11 +96,13 @@ namespace E_Commerce_API.Controllers
                 }
                 else
                 {
+                    
                     return BadRequest(ModelState);
                 }
             }
             catch (Exception ex)
             {
+               
                 return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
             }
         }
@@ -108,6 +117,11 @@ namespace E_Commerce_API.Controllers
         public async Task<IActionResult> AddProduct([FromBody] AddProductDTO dto)
         {
             var productId = await productService.AddProductAsync(dto);
+            if (productId == null)
+            {
+                
+                return BadRequest("Failed to add product.");
+            }
             return Ok(new { Message = "Product added successfully", ProductId = productId });
         }
         [HttpPost("upload-photo")]
@@ -115,6 +129,11 @@ namespace E_Commerce_API.Controllers
         public async Task<IActionResult> UploadImages([FromForm] UploadImageDTO dto)
         {
             var images = await productService.UploadImagesAsync(dto);
+            if (images == null || !images.Any())
+            {
+                
+                return BadRequest("No images were uploaded.");
+            }
             return Ok(new { Message = "Images uploaded successfully", Images = images });
         }
 

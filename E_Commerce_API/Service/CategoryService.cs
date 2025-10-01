@@ -1,5 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Models.DTO.Category;
+using StackExchange.Redis;
+using System.Diagnostics;
+using System.Runtime.Intrinsics.Arm;
+using System.Text.Json;
 using Unit_Of_Work;
 
 namespace E_Commerce_API.Service
@@ -7,9 +12,14 @@ namespace E_Commerce_API.Service
     public class CategoryService
     {
         UnitWork unitWork;
-        public CategoryService(UnitWork unitWork)
+        private readonly ILogger logger;
+        private readonly IDistributedCache cache;
+
+        public CategoryService(UnitWork unitWork,ILogger<CategoryService> logger,IDistributedCache cache)
         {
             this.unitWork = unitWork;
+            this.logger = logger;
+            this.cache = cache;
         }
         public async Task<List<CategoryDTO>> GetAllCategory()
         {
@@ -69,6 +79,21 @@ namespace E_Commerce_API.Service
         }
         public async Task<PaginatedProductsByCategoryDTO> GetProductByCategory(int categoryId, int page = 1, int pagesize = 100)
         {
+            var stopWatch = Stopwatch.StartNew();
+
+            string cacheKey = $"pagination_category_{categoryId}_page_{page}_size_{pagesize}";
+            // case data in redis
+            var cachedData = await cache.GetStringAsync(cacheKey);
+            if (!string.IsNullOrEmpty(cachedData))  // case data in redis
+            {
+                logger.LogInformation($"Data git from redis");
+                var data = JsonSerializer.Deserialize<PaginatedProductsByCategoryDTO>(cachedData);
+                stopWatch.Stop();
+                logger.LogInformation($"Data git from redis took {stopWatch.Elapsed.TotalMilliseconds} ms");
+                return data;
+            }
+
+            // data dosn't exist in redis
             var category = await unitWork.CategoryRepo.GetByIdAsync(categoryId);
             if (category == null)
             {
@@ -112,7 +137,8 @@ namespace E_Commerce_API.Service
 
             var totalCount = await query.CountAsync();
             var totalPages = (int)Math.Ceiling((double)totalCount / pagesize);
-            return new PaginatedProductsByCategoryDTO
+
+            var dataFromDB =  new PaginatedProductsByCategoryDTO
             {
                 CurrentPage = page,
                 PageSize = pagesize,
@@ -120,6 +146,15 @@ namespace E_Commerce_API.Service
                 TotalPages = totalPages,
                 Data = productDTOs
             };
+
+            logger.LogInformation("Data retrieved from DB and saved to Redis");
+            var serialized = JsonSerializer.Serialize(dataFromDB);
+            await cache.SetStringAsync(cacheKey, serialized, new DistributedCacheEntryOptions()
+                                                             .SetAbsoluteExpiration(TimeSpan.FromMinutes(10)));
+            stopWatch.Stop();
+            logger.LogInformation($"DB fetch + cache save took {stopWatch.Elapsed.TotalMilliseconds} ms");
+
+            return dataFromDB;
         }
 
     }

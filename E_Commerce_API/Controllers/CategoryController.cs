@@ -59,7 +59,7 @@ namespace E_Commerce_API.Controllers
 
         // Pageination for products by category
         [HttpGet("ProductByCategory")] 
-        public async Task<IActionResult> GetProductByCategory(int categoryId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetProductByCategory(int categoryId, [FromQuery] int page = 1, [FromQuery] int pageSize = 100)
         {
 
             try

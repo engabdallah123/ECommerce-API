@@ -24,6 +24,9 @@ namespace Unit_Of_Work
         GenericRepositry<WalletTransaction> walletTransactionRepo;
         GenericRepositry<FolderImage> folderImageRepo;
         GenericRepositry<CustomerFeedback> customerFeedbackRepo;
+        GenericRepositry<Cart> cartRepo;
+        GenericRepositry<CartItem> cartItemsRepo;
+        GenericRepositry<ApplicationUser> applicationUserRepo;
 
         public UnitWork(AppDbContext db)
         {
@@ -73,6 +76,28 @@ namespace Unit_Of_Work
                     orderRepo = new GenericRepositry<Order>(db);
                 }
                 return orderRepo;
+            }
+        }      
+        public GenericRepositry<Cart> CartRepo
+        {
+            get
+            {
+                if (cartRepo == null)
+                {
+                    cartRepo = new GenericRepositry<Cart>(db);
+                }
+                return cartRepo;
+            }
+        }      
+        public GenericRepositry<CartItem> CartItemsRepo
+        {
+            get
+            {
+                if (cartItemsRepo == null)
+                {
+                    cartItemsRepo = new GenericRepositry<CartItem>(db);
+                }
+                return cartItemsRepo;
             }
         }      
         public GenericRepositry<OrderItem> OrderItemRepo
@@ -152,9 +177,24 @@ namespace Unit_Of_Work
                 return customerFeedbackRepo;
             }
         }
+        public GenericRepositry<ApplicationUser> ApplicationUserRepo
+        {
+            get
+            {
+                if (applicationUserRepo == null)
+                {
+                    applicationUserRepo = new GenericRepositry<ApplicationUser>(db);
+                }
+                return applicationUserRepo;
+            }
+        }
         public void Save()
         {
             db.SaveChanges();
+        }
+        public async Task SaveAsync()
+        {
+           await db.SaveChangesAsync();
         }
         public void Dispose()
         {

@@ -1,0 +1,1759 @@
+2025-09-28 18:08:07.074 +03:00 [INF] Starting web application
+2025-09-28 18:08:07.983 +03:00 [INF] User profile is available. Using 'C:\Users\kapitoo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-28 18:08:08.275 +03:00 [INF] Now listening on: http://localhost:5104
+2025-09-28 18:08:08.442 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-28 18:08:08.444 +03:00 [INF] Hosting environment: Development
+2025-09-28 18:08:08.445 +03:00 [INF] Content root path: C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API
+2025-09-28 18:08:13.776 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/index.html - null null
+2025-09-28 18:08:14.196 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/index.html - 200 null text/html;charset=utf-8 423.0718ms
+2025-09-28 18:08:15.418 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui.css - null null
+2025-09-28 18:08:15.418 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/index.css - null null
+2025-09-28 18:08:15.423 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui-bundle.js - null null
+2025-09-28 18:08:15.425 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-28 18:08:15.425 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 18:08:15.425 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/index.js - null null
+2025-09-28 18:08:15.442 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 17.0625ms
+2025-09-28 18:08:15.444 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-09-28 18:08:15.447 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-09-28 18:08:15.447 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-09-28 18:08:15.450 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/index.js - 200 null application/javascript;charset=utf-8 25.2497ms
+2025-09-28 18:08:15.455 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/index.css - 200 202 text/css 37.8817ms
+2025-09-28 18:08:15.460 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 34.9069ms
+2025-09-28 18:08:15.460 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui.css - 200 154949 text/css 43.6315ms
+2025-09-28 18:08:15.465 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-09-28 18:08:15.481 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 58.0683ms
+2025-09-28 18:08:16.583 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/_vs/browserLink - null null
+2025-09-28 18:08:16.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/_vs/browserLink - 200 null text/javascript; charset=UTF-8 202.4322ms
+2025-09-28 18:08:17.103 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/openapi/v1.json - null null
+2025-09-28 18:08:17.117 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-28 18:08:17.178 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/swagger/favicon-16x16.png - null null
+2025-09-28 18:08:17.181 +03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2025-09-28 18:08:17.184 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/swagger/favicon-16x16.png - 200 665 image/png 5.7729ms
+2025-09-28 18:08:17.254 +03:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-09-28 18:08:17.587 +03:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-09-28 18:08:17.594 +03:00 [INF] HTTP GET /openapi/v1.json responded 200 in 477.9221 ms
+2025-09-28 18:08:17.598 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/openapi/v1.json - 200 null application/json;charset=utf-8 494.941ms
+2025-09-28 18:09:49.661 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/api/Product - null null
+2025-09-28 18:09:49.670 +03:00 [INF] Executing endpoint 'E_Commerce_API.Controllers.ProductController.GetAllProducts (E_Commerce_API)'
+2025-09-28 18:09:49.701 +03:00 [INF] Route matched with {action = "GetAllProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProducts() on controller E_Commerce_API.Controllers.ProductController (E_Commerce_API).
+2025-09-28 18:09:50.401 +03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-09-28 18:09:50.666 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:09:50.669 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:09:50.672 +03:00 [WRN] No store type was specified for the decimal property 'Rating' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:09:50.675 +03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'Wallet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:09:50.677 +03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'WalletTransaction'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:09:51.594 +03:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Description], [p].[Name], [p].[Price], [p].[Rating], [p].[Stock]
+FROM [Products] AS [p]
+2025-09-28 18:09:51.886 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:51.916 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:51.938 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:51.952 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:51.960 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:51.972 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:51.981 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:51.989 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.001 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.007 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.015 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.019 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.022 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.025 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.029 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.033 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.036 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.038 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.041 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.046 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.049 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.052 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.055 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.058 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.061 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.065 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.068 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.071 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.074 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.078 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.085 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.089 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.095 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.100 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.104 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.110 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.115 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.119 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.124 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.131 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.135 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.139 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.145 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.150 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.154 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.159 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.164 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.169 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.174 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.182 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.189 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.198 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.206 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.216 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.225 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.235 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.252 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.262 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.268 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.273 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.280 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.284 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.288 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.295 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.299 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.304 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.308 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.313 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.317 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.320 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.323 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.329 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.334 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.339 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.344 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.349 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.354 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.360 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.366 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.371 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.375 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.381 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.385 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.390 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.395 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.400 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.404 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.409 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.415 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.419 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.423 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.429 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.433 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.438 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.442 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.448 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.453 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.457 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.463 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.468 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.472 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.478 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.483 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.487 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.492 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.497 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.501 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.504 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.507 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.510 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.514 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.518 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.521 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.524 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.530 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.534 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.538 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.542 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.548 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.552 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.556 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.561 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.566 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.569 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.572 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.574 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.579 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.584 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.590 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.596 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.602 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.607 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.613 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.618 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.622 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.626 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.631 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.637 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.642 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.648 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.653 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.657 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.662 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.667 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.671 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.675 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.680 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.684 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.688 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.692 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.698 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.702 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.706 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.712 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.716 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.721 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.725 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.731 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.735 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.739 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.744 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.748 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.751 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.753 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.756 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.759 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.764 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.767 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.770 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.772 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.775 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.779 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.782 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.785 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.787 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.790 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.792 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.797 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.800 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.803 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.806 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.810 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.814 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.817 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.821 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.824 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.829 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.835 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.840 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.845 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.849 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.854 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.858 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.864 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.868 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.872 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.878 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.883 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.889 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.896 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.900 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.905 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.911 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.916 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.922 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.928 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.932 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.937 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.942 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.947 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.952 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.958 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.964 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.968 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.972 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.976 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.981 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.985 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.990 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:52.995 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:52.999 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.002 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.005 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.009 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.013 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.017 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.020 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.023 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.026 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.030 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.033 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.036 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.039 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.042 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.047 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.050 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.054 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.057 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.061 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.064 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.067 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.070 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.073 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.077 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.082 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.087 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.094 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.098 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.103 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.109 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.114 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.119 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.124 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.131 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.136 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.141 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.147 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.152 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.157 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.163 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.168 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.173 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.179 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.183 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.189 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.194 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.199 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.204 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.210 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.216 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.221 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.228 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.233 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.238 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.245 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.250 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.255 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.262 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.266 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.270 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.273 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.276 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.282 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.286 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.289 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.294 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.298 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.302 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.306 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.314 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.318 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.322 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.326 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.331 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.334 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.337 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.340 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.344 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.349 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.353 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.358 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.364 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.368 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.372 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.376 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.381 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.386 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.390 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.395 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.399 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.403 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.408 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.413 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.417 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.422 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.427 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.432 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.436 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.440 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.445 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.449 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.453 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.457 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.463 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.469 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.473 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.478 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.482 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.486 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.490 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.496 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.501 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.506 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.512 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.516 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.520 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.524 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.529 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.533 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.539 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.542 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.548 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.551 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Id] = @__product_Id_0
+2025-09-28 18:09:53.553 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__product_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[ImageUrl]
+FROM [Images] AS [i]
+WHERE [i].[ProductId] = @__product_Id_0
+2025-09-28 18:09:53.556 +03:00 [INF] Retrieved 115 products from the database.
+2025-09-28 18:09:53.563 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Models.DTO.Product.ProductDTO, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 18:09:53.581 +03:00 [INF] Executed action E_Commerce_API.Controllers.ProductController.GetAllProducts (E_Commerce_API) in 3868.284ms
+2025-09-28 18:09:53.584 +03:00 [INF] Executed endpoint 'E_Commerce_API.Controllers.ProductController.GetAllProducts (E_Commerce_API)'
+2025-09-28 18:09:53.586 +03:00 [INF] HTTP GET /api/Product responded 200 in 3919.2383 ms
+2025-09-28 18:09:53.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/api/Product - 200 null application/json; charset=utf-8 3943.3287ms
+2025-09-28 18:12:48.212 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5104/api/Product/12333 - null null
+2025-09-28 18:12:48.238 +03:00 [INF] Executing endpoint 'E_Commerce_API.Controllers.ProductController.GetProductById (E_Commerce_API)'
+2025-09-28 18:12:48.252 +03:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductById(Int32) on controller E_Commerce_API.Controllers.ProductController (E_Commerce_API).
+2025-09-28 18:12:48.360 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[Description], [p].[Name], [p].[Price], [p].[Rating], [p].[Stock]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2025-09-28 18:12:48.367 +03:00 [INF] Executed action E_Commerce_API.Controllers.ProductController.GetProductById (E_Commerce_API) in 112.0602ms
+2025-09-28 18:12:48.369 +03:00 [INF] Executed endpoint 'E_Commerce_API.Controllers.ProductController.GetProductById (E_Commerce_API)'
+2025-09-28 18:12:48.371 +03:00 [ERR] HTTP GET /api/Product/12333 responded 500 in 135.9370 ms
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 12333 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 100
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-09-28 18:12:48.396 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 12333 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 100
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-09-28 18:12:48.408 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5104/api/Product/12333 - 500 null text/plain; charset=utf-8 196.7074ms
+2025-09-28 18:24:49.664 +03:00 [INF] Starting web application
+2025-09-28 18:26:30.668 +03:00 [INF] Starting web application
+2025-09-28 18:26:36.350 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-28 18:26:36.629 +03:00 [INF] HTTP GET /openapi/v1.json responded 200 in 284.3571 ms
+2025-09-28 18:26:56.178 +03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-09-28 18:26:56.502 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:26:56.506 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:26:56.509 +03:00 [WRN] No store type was specified for the decimal property 'Rating' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:26:56.513 +03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'Wallet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:26:56.516 +03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'WalletTransaction'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:26:58.776 +03:00 [INF] Retrieved 115 products from the database.
+2025-09-28 18:26:58.803 +03:00 [INF] HTTP GET /api/Product responded 200 in 3608.6914 ms
+2025-09-28 18:27:32.052 +03:00 [ERR] HTTP GET /api/Product/444 responded 500 in 137.0062 ms
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 444 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 100
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-09-28 18:27:32.083 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 444 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 100
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)

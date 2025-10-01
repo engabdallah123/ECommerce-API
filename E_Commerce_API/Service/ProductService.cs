@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Models.Domain;
 using Models.DTO.Image;
 using Models.DTO.Product;
+using System.Diagnostics;
 using Unit_Of_Work;
 
 namespace E_Commerce_API.Service
@@ -10,49 +12,84 @@ namespace E_Commerce_API.Service
     public class ProductService
     {
         UnitWork unitWork;
-        public ProductService(UnitWork unitWork)
+        private readonly ILogger<ProductService> logger;
+        private readonly IMemoryCache cache;
+
+        public ProductService(UnitWork unitWork,ILogger<ProductService> logger,
+            IMemoryCache cache)
         {
             this.unitWork = unitWork;
+            this.logger = logger;
+            this.cache = cache;
         }
         public async Task<List<ProductDTO>> GetAllProducts()
         {
-            var products = await unitWork.ProductRepo.GetAllAsync();
-            if (products == null || !products.Any())
+            var stopWatch = Stopwatch.StartNew();
+
+            var cacheKey = "all_product";
+            if(!cache.TryGetValue(cacheKey, out List<ProductDTO> cachedProducts))
             {
-                throw new InvalidOperationException("No products found.");
+                logger.LogInformation("Cache Is Empty..loading products from database");
+                try
+                {
+                    var products = await unitWork.ProductRepo.GetAllAsync();
+
+                    List<ProductDTO> productsDTO = new List<ProductDTO>();
+                    foreach (var product in products)
+                    {
+                        ProductDTO productDTO1 = new ProductDTO()
+                        {
+                            Id = product.Id,
+                            Name = product.Name,
+                            Description = product.Description,
+                            Price = product.Price,
+                            stock = product.Stock,
+                            Brand = product.Brand,
+                            Rating = product.Rating,
+                            // FIX: Remove await, since FirstOrDefault returns string synchronously
+                            CatName = await unitWork.db.Products
+                                .Where(i => i.Id == product.Id)
+                                .Select(c => c.Category.Name)
+                                .FirstOrDefaultAsync(),
+                            CatId = await unitWork.db.Products
+                                 .Where(i => i.Id == product.Id)
+                                 .Select(c => c.Category.Id)
+                                 .FirstOrDefaultAsync(),
+                            ImageUrl = await unitWork.db.Images
+                                        .Where(i => i.ProductId == product.Id)
+                                        .Select(i => i.ImageUrl)
+                                        .ToListAsync()
+                        };
+                        productsDTO.Add(productDTO1);
+
+                    }
+                    cachedProducts = productsDTO;
+
+                    var entryOptions = new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
+
+                    cache.Set(cacheKey,cachedProducts, entryOptions);
+
+                    logger.LogInformation("Products have been cached");
+                    return cachedProducts;
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error while retrieving products from database");
+                }
+                
             }
             else
             {
-                List<ProductDTO> productDTO = new List<ProductDTO>();
-                foreach (var product in products)
-                {
-                    ProductDTO productDTO1 = new ProductDTO()
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        Description = product.Description,
-                        Price = product.Price,
-                        stock = product.Stock,
-                        Brand = product.Brand,
-                        Rating = product.Rating,
-                        // FIX: Remove await, since FirstOrDefault returns string synchronously
-                        CatName = await unitWork.db.Products
-                            .Where(i => i.Id == product.Id)
-                            .Select(c => c.Category.Name)
-                            .FirstOrDefaultAsync(),
-                        CatId = await unitWork.db.Products
-                             .Where(i => i.Id == product.Id)
-                             .Select(c => c.Category.Id)
-                             .FirstOrDefaultAsync(),
-                        ImageUrl = await unitWork.db.Images
-                                    .Where(i => i.ProductId == product.Id)
-                                    .Select(i => i.ImageUrl)
-                                    .ToListAsync()
-                    };
-                    productDTO.Add(productDTO1);
-                }
-                return productDTO;
+                logger.LogInformation("Retrieved {Count} products from cache", cachedProducts.Count);
+                
             }
+
+            stopWatch.Stop();
+
+            logger.LogInformation("Products retrieved in {ElapsedMs} ms", stopWatch.ElapsedMilliseconds);
+            
+            return cachedProducts;
+           
         }
         public async Task<List<ProductDTO>> GetProductMoreRating()
         {
@@ -100,8 +137,11 @@ namespace E_Commerce_API.Service
             var product = await unitWork.ProductRepo.GetByIdAsync(id);
             if (product == null)
             {
-                throw new InvalidOperationException($"No products found with name {id}.");
+                logger.LogWarning("No product found with #{Id}.", id);
+                return null;
             }
+                
+
             else
             {
 

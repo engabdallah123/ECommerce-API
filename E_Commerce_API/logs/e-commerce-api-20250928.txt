@@ -1,0 +1,66 @@
+2025-09-28 18:30:58.827 +03:00 [INF] Starting web application
+2025-09-28 18:31:07.528 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-28 18:31:08.416 +03:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 904.8599 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponsePipeWriter.WriteAsync(ReadOnlyMemory`1 source, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-09-28 18:32:31.777 +03:00 [INF] Starting web application
+2025-09-28 18:32:37.762 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-28 18:32:38.312 +03:00 [INF] HTTP GET /openapi/v1.json responded 200 in 558.9730 ms
+2025-09-28 18:32:54.786 +03:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-09-28 18:32:55.124 +03:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:32:55.128 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:32:55.130 +03:00 [WRN] No store type was specified for the decimal property 'Rating' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:32:55.132 +03:00 [WRN] No store type was specified for the decimal property 'Balance' on entity type 'Wallet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:32:55.135 +03:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'WalletTransaction'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-28 18:32:56.559 +03:00 [ERR] HTTP GET /api/Product/222 responded 500 in 3019.9874 ms
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 222 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 103
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-09-28 18:32:56.584 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'this 222 not found')
+   at Repositry.GenericRepositry`1.GetByIdAsync(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\Repositry\GenericRepositry.cs:line 37
+   at E_Commerce_API.Service.ProductService.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Service\ProductService.cs:line 103
+   at E_Commerce_API.Controllers.ProductController.GetProductById(Int32 id) in C:\Users\kapitoo\OneDrive\Desktop\E_Commerce\E_Commerce_API\E_Commerce_API\Controllers\ProductController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-09-28 18:34:42.593 +03:00 [INF] HTTP PUT /api/Product/333 responded 400 in 56.4592 ms
+2025-09-28 18:35:40.352 +03:00 [INF] Starting web application
+2025-09-28 18:35:59.454 +03:00 [INF] Starting web application
+2025-09-28 18:38:00.739 +03:00 [INF] Starting web application
+2025-09-28 18:38:06.374 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-28 18:38:06.854 +03:00 [INF] HTTP GET /openapi/v1.json responded 200 in 483.5052 ms
+2025-09-28 18:38:18.066 +03:00 [INF] HTTP PUT /api/Product/444 responded 400 in 239.7193 ms

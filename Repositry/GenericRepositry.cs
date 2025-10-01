@@ -4,6 +4,7 @@ using Models.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +39,20 @@ namespace Repositry
             }
 
         }
+        public async Task<Entity> GetUserByIdAsync(string id)
+        {
+            var entity = await db.Set<Entity>()
+                          .FirstOrDefaultAsync(e => EF.Property<string>(e, "Id") == id);
+            if (entity != null)
+            {
+                return entity;
+            }
+            else
+            {
+                throw new ArgumentNullException($"this {id} not found");
+            }
+
+        }
         public Entity GetById(int id)
         {
             var entity = db.Set<Entity>().Find(id);
@@ -50,6 +65,8 @@ namespace Repositry
                 throw new ArgumentNullException($"this {id} not found");
             }
         }
+        
+
         public async Task<List<Entity>> GetByNameAsync(string name)
         {
             if (name != null)
@@ -76,17 +93,7 @@ namespace Repositry
                 throw new ArgumentNullException($"this {name} not found");
             }
         }
-       public async Task<string> GetCatNameByProId(int proId)
-        {
-            if(proId != 0)
-            {
-                return await db.Products.Where(i => i.Id == proId).Select(c => c.Category.Name).FirstOrDefaultAsync();
-            }
-            else
-            {
-                throw new ArgumentNullException($"this {proId} not found");
-            }
-        }
+      
         public void Add(Entity entity)
         {
             db.Set<Entity>().Add(entity);
@@ -104,6 +111,10 @@ namespace Repositry
                 throw new ArgumentNullException(nameof(entity));
 
         }
+        public void Updateing(Entity entity)
+        {        
+          db.Set<Entity>().Update(entity);        
+        }
         public void Delete(int id)
         {
             var entity = db.Set<Entity>().Find(id);
@@ -120,10 +131,7 @@ namespace Repositry
         {
           await  db.SaveChangesAsync();
         }
-        public void Dispose()
-        {
-            db.Dispose();
-        }
+       
 
 
 

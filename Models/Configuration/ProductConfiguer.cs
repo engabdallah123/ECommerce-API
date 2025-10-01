@@ -22,6 +22,11 @@ namespace Models.Configuration
                 .HasForeignKey(i => i.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.HasMany(c => c.CartItems)
+                .WithOne(ci => ci.Product)
+                .HasForeignKey(ci => ci.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }
